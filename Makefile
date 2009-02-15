@@ -100,7 +100,7 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 dist: all
 #---------------------------------------------------------------------------------
-	@tar --exclude=*CVS* -cvjf default_arm7-src-$(DATESTRING).tar.bz2 source Makefile
+	@tar --exclude=*CVS* --exclude=.svn -cvjf default_arm7-src-$(DATESTRING).tar.bz2 source Makefile
 	@tar -cvjf default_arm7-$(DATESTRING).tar.bz2 default.arm7
 
 #---------------------------------------------------------------------------------
