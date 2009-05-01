@@ -1,5 +1,8 @@
-DATESTRING	:=	$(shell date +%Y)$(shell date +%m)$(shell date +%d)
+export ARM7_MAJOR	:= 0
+export ARM7_MINOR	:= 5
+export ARM7_PATCH	:= 2
 
+VERSTRING	:=	$(ARM7_MAJOR).$(ARM7_MINOR).$(ARM7_PATCH)
 #---------------------------------------------------------------------------------
 .SUFFIXES:
 #---------------------------------------------------------------------------------
@@ -100,8 +103,8 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 dist: all
 #---------------------------------------------------------------------------------
-	@tar --exclude=*CVS* --exclude=.svn -cvjf default_arm7-src-$(DATESTRING).tar.bz2 source Makefile
-	@tar -cvjf default_arm7-$(DATESTRING).tar.bz2 default.arm7
+	@tar --exclude=*CVS* --exclude=.svn -cvjf default_arm7-src-$(VERSTRING).tar.bz2 source Makefile
+	@tar -cvjf default_arm7-$(VERSTRING).tar.bz2 default.arm7
 
 #---------------------------------------------------------------------------------
 install: all
