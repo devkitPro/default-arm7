@@ -48,17 +48,22 @@ void VblankHandler(void) {
 //---------------------------------------------------------------------------------
 int main() {
 //---------------------------------------------------------------------------------
+
+	// read User Settings from firmware
+	readUserSettings();
+
 	powerOn(POWER_SOUND);
 
 	irqInit();
+	irqSet(IRQ_WIFI, 0);
 	fifoInit();
 
-	mmInstall(FIFO_MAXMOD);
 
 	SetYtrigger(80);
 
 	installWifiFIFO();
 	installSoundFIFO();
+	mmInstall(FIFO_MAXMOD);
 
 	installSystemFIFO();
 	
@@ -69,9 +74,6 @@ int main() {
 	initClockIRQ();
 
 	irqEnable( IRQ_VBLANK | IRQ_VCOUNT | IRQ_NETWORK);   
-
-	// read User Settings from firmware
-	readUserSettings();
 
 	// Keep the ARM7 mostly idle
 	while (1) swiWaitForVBlank();
