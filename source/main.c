@@ -49,15 +49,20 @@ void VblankHandler(void) {
 int main() {
 //---------------------------------------------------------------------------------
 
+	powerOn(POWER_SOUND);
+
 	// read User Settings from firmware
 	readUserSettings();
 
-	powerOn(POWER_SOUND);
-
 	irqInit();
-	irqSet(IRQ_WIFI, 0);
-	fifoInit();
 
+	// reserve wifi irq
+	irqSet(IRQ_WIFI, 0);
+
+	// Start the RTC tracking IRQ
+	initClockIRQ();
+
+	fifoInit();
 
 	SetYtrigger(80);
 
@@ -69,9 +74,6 @@ int main() {
 	
 	irqSet(IRQ_VCOUNT, VcountHandler);
 	irqSet(IRQ_VBLANK, VblankHandler);
-
-	// Start the RTC tracking IRQ
-	initClockIRQ();
 
 	irqEnable( IRQ_VBLANK | IRQ_VCOUNT | IRQ_NETWORK);   
 
