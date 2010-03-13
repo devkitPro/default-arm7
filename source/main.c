@@ -2,7 +2,7 @@
 
 	default ARM7 core
 
-		Copyright (C) 2005
+		Copyright (C) 2005 - 2010
 		Michael Noland (joat)
 		Jason Rogers (dovoto)
 		Dave Murphy (WinterMute)
