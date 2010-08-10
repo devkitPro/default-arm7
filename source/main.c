@@ -58,12 +58,11 @@ int main() {
 	readUserSettings();
 
 	irqInit();
-	// Start the RTC tracking IRQ
-	initClockIRQ();
-
 	fifoInit();
 
 	mmInstall(FIFO_MAXMOD);
+	// Start the RTC tracking IRQ
+	initClockIRQ();
 
 	SetYtrigger(80);
 
