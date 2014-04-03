@@ -1,6 +1,6 @@
 export ARM7_MAJOR	:= 0
 export ARM7_MINOR	:= 5
-export ARM7_PATCH	:= 24
+export ARM7_PATCH	:= 25
 
 VERSTRING	:=	$(ARM7_MAJOR).$(ARM7_MINOR).$(ARM7_PATCH)
 #---------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ $(BUILD):
 dist: all
 #---------------------------------------------------------------------------------
 	@tar --exclude=*CVS* --exclude=.svn -cvjf default_arm7-src-$(VERSTRING).tar.bz2 source Makefile
-	@tar -cvjf default_arm7-$(VERSTRING).tar.bz2 default.arm7 default.elf
+	@tar -cvjf default_arm7-$(VERSTRING).tar.bz2 default.elf
 
 #---------------------------------------------------------------------------------
 install: all
