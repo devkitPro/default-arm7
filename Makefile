@@ -28,6 +28,7 @@ INCLUDES	:=	include build
 ARCH	:=	-march=armv4t -mthumb -mthumb-interwork
 
 CFLAGS	:=	-g -Wall -Os\
+		-ffunction-sections -fdata-sections \
  		-mcpu=arm7tdmi -mtune=arm7tdmi -fomit-frame-pointer\
 		-ffast-math \
 		$(ARCH)
