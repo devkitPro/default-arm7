@@ -1,5 +1,5 @@
 export ARM7_MAJOR	:= 0
-export ARM7_MINOR	:= 6
+export ARM7_MINOR	:= 7
 export ARM7_PATCH	:= 0
 
 VERSTRING	:=	$(ARM7_MAJOR).$(ARM7_MINOR).$(ARM7_PATCH)
