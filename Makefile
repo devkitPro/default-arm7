@@ -104,8 +104,8 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 dist: all
 #---------------------------------------------------------------------------------
-	@tar --exclude=*CVS* --exclude=.svn -cvjf default_arm7-src-$(VERSTRING).tar.bz2 source Makefile
-	@tar -cvjf default_arm7-$(VERSTRING).tar.bz2 default.elf
+	@tar --exclude=*CVS* --exclude=.svn -cvjf default-arm7-src-$(VERSTRING).tar.bz2 source Makefile
+	@tar -cvjf default-arm7-$(VERSTRING).tar.bz2 default.elf
 
 #---------------------------------------------------------------------------------
 install: all
